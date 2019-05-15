@@ -18,7 +18,7 @@
 		var tempStr,title,author,pub,isbn,price;
 		var url = location.href;
 		if(url.indexOf("dangdang.com")>0){
-			'当当网'
+			//当当网
 			title = document.getElementsByTagName("h1")[0].innerText;
 			author =document.getElementById("author").innerText.substring(3);
 			pub = document.getElementsByClassName("t1")[1].innerText.substring(4);
@@ -29,7 +29,7 @@
 		};
 
 		if(url.indexOf("jd.com")>0){
-			'京东'
+			//京东
 			title = document.getElementsByClassName("sku-name")[0].innerText;
 			author = document.getElementById("p-author").innerText;
 			price = document.getElementById("page_maprice").innerText;
