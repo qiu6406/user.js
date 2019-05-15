@@ -13,6 +13,7 @@
 (function() {
     'use strict';
     // Your code here...
+	//页面完全加载完成后
 	window.onload = (event) => {
 		var tempStr,title,author,pub,isbn,price;
 
