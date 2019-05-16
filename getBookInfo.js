@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
+	'use strict';
     // Your code here...
 	//页面完全加载完成后
 	window.onload = (event) => {
@@ -35,7 +35,7 @@
 			price = document.getElementById("page_maprice").innerText;
 			pub = document.getElementById("parameter2").children[0].title;
 			isbn = document.getElementById("parameter2").children[1].title;
-            alert(title+","+author+","+pub+","+isbn+","+price);
+			alert(title+","+author+","+pub+","+isbn+","+price);
 		};
 	};
 })();
