@@ -12,9 +12,8 @@
 
 (function() {
 	'use strict';
-    // Your code here...
-	//页面完全加载完成后
-	window.onload = (event) => {
+	// Your code here...
+	function getBookInfo(){
 		var tempStr,title,author,pub,isbn,price;
 		var url = location.href;
 		if(url.indexOf("dangdang.com")>0){
@@ -25,7 +24,7 @@
 			tempStr = document.getElementsByClassName("key clearfix").item(0).innerHTML;
 			isbn = tempStr.substring(tempStr.indexOf("国际标准书号ISBN：")+11,tempStr.indexOf("国际标准书号ISBN：")+24);
 			price = document.getElementById("original-price").innerText;
-			alert(title+","+author+","+pub+","+isbn+","+price);
+			prompt("",title+","+author+","+pub+","+isbn+","+price);
 		};
 
 		if(url.indexOf("jd.com")>0){
@@ -35,7 +34,12 @@
 			price = document.getElementById("page_maprice").innerText;
 			pub = document.getElementById("parameter2").children[0].title;
 			isbn = document.getElementById("parameter2").children[1].title;
-			alert(title+","+author+","+pub+","+isbn+","+price);
+			prompt("",title+","+author+","+pub+","+isbn+","+price);
 		};
-	};
+	}
+	//页面完全加载完成后，弹出提示框，T设置为1；页面加载即执行T设置为0
+	//建议在当当网站设置为0，京东设置为1
+	var T=0;
+	if(T==1)window.onload = (event) => {getBookInfo();}
+	else getBookInfo();
 })();
