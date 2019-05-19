@@ -34,7 +34,8 @@
 			//京东
 			title = document.getElementsByClassName("sku-name")[0].innerText;
 			author = document.getElementById("p-author").innerText;
-			price = document.getElementById("page_maprice").innerText;
+			if(document.getElementById("page_origin_price")==null) {price = document.getElementById("page_maprice").innerText;}
+            else {price = document.getElementById("page_origin_price").innerText;}
 			pub = document.getElementById("parameter2").children[0].title;
 			isbn = document.getElementById("parameter2").children[1].title;
 			//提示框样式1,如需使用注释样式2
