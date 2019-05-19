@@ -25,9 +25,9 @@
 			isbn = tempStr.substring(tempStr.indexOf("国际标准书号ISBN：")+11,tempStr.indexOf("国际标准书号ISBN：")+24);
 			price = document.getElementById("original-price").innerText;
 			//提示框样式1,如需使用注释样式2
-			prompt("",title+","+author+","+pub+","+isbn+","+price);
+			prompt("基本信息",title+","+author+","+pub+","+isbn+","+price);
 			//提示框样式2，如需使用注释样式1
-			//alert("",title+","+author+","+pub+","+isbn+","+price);
+			//alert(title+","+author+","+pub+","+isbn+","+price);
 		};
 
 		if(url.indexOf("jd.com")>0){
@@ -39,9 +39,9 @@
 			pub = document.getElementById("parameter2").children[0].title;
 			isbn = document.getElementById("parameter2").children[1].title;
 			//提示框样式1,如需使用注释样式2
-			//prompt("",title+","+author+","+pub+","+isbn+","+price);
+			//prompt("基本信息",title+","+author+","+pub+","+isbn+","+price);
 			//提示框样式2，如需使用注释样式1
-			alert("",title+","+author+","+pub+","+isbn+","+price);
+			alert(title+","+author+","+pub+","+isbn+","+price);
 		};
 	}
 	//页面完全加载完成后，弹出提示框，T设置为1；页面加载即执行T设置为0
