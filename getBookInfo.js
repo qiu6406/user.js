@@ -1,8 +1,8 @@
 ﻿// ==UserScript==
 // @name         获取图书基本信息
-// @namespace    http://tampermonkey.net/
+// @namespace    https://greasyfork.org
 // @version      0.1.1
-// @description  try to take over the world!
+// @description  获取当当、京东图书基本信息，通过弹框显示所需图书书名、作者、出版社、价格等基本信息
 // @author       404566950@qq.com
 // @match        http://*.dangdang.com/*
 // @match        https://*.dangdang.com/*
