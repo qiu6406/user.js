@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name         获取图书基本信息
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       404566950@qq.com
 // @match        http://*.dangdang.com/*
