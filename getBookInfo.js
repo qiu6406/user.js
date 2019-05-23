@@ -1,8 +1,9 @@
 ﻿// ==UserScript==
 // @name         获取图书基本信息
-// @namespace    https://greasyfork.org
+// @namespace    https://greasyfork.org/zh-CN/users/301997-qiu6406
 // @version      0.1.1
 // @description  获取当当、京东图书基本信息，通过弹框显示所需图书书名、作者、出版社、价格等基本信息
+// @description  可自行修改代码参数变量“T”，选择弹出提示框的先后时间；提供两种弹出提示框，可根据需要自行注释代码选择；
 // @author       404566950@qq.com
 // @match        http://*.dangdang.com/*
 // @match        https://*.dangdang.com/*
