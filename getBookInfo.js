@@ -1,12 +1,13 @@
 ﻿// ==UserScript==
 // @name         获取图书基本信息
 // @namespace    https://greasyfork.org/zh-CN/users/301997-qiu6406
-// @version      0.1.2
-// @description  获取当当、京东图书基本信息，通过弹框显示所需图书书名、作者、出版社、价格等基本信息;可自行修改代码参数变量“T”，选择弹出提示框的先后时间；提供两种弹出提示框，可根据需要自行注释代码选择；
+// @version      0.1.3
+// @description  获取当当、京东、豆瓣图书基本信息，通过弹框显示所需图书书名、作者、出版社、价格等基本信息;可自行修改代码参数变量“T”，选择弹出提示框的先后时间；提供两种弹出提示框，可根据需要自行注释代码选择；
 // @author       404566950@qq.com
 // @match        http://*.dangdang.com/*
 // @match        https://*.dangdang.com/*
 // @match        https://*.jd.com/*
+// @match        https://book.douban.com/*
 // @grant        MIT
 // ==/UserScript==
 
@@ -42,6 +43,19 @@
 			//prompt("基本信息",title+","+author+","+pub+","+isbn+","+price);
 			//提示框样式2，如需使用注释样式1
 			alert(title+","+author+","+pub+","+isbn+","+price);
+		};
+
+		if(url.indexOf("douban.com")>0){
+			//豆瓣
+			var info,infoObj,filter;
+			filter = new RegExp('[\[\]\|\`\(\)]','g');
+			info = '{'+document.getElementById("info").innerText.replace(new RegExp('\n','gm'),',').replace(new RegExp(',','g'),'","').replace(new RegExp(':','g'),'":"').replace(new RegExp('^'),'"').replace(new RegExp(',"$'),'')+'}';
+			infoObj = eval("("+info.replace(filter,'')+")");
+			infoObj.title = document.getElementsByTagName("H1")[0].innerText;
+			//提示框样式1,如需使用注释样式2
+			prompt("基本信息",infoObj.title+","+infoObj.作者+","+infoObj.出版社+","+infoObj.ISBN+","+"￥"+infoObj.定价);
+			//提示框样式2，如需使用注释样式1
+			//alert(infoObj.title+","+infoObj.作者+","+infoObj.出版社+","+infoObj.ISBN+","+infoObj.定价);
 		};
 	}
 	//页面完全加载完成后，弹出提示框，T设置为1；页面加载即执行T设置为0
