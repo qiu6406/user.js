@@ -48,9 +48,9 @@
 		if(url.indexOf("douban.com")>0){
 			//豆瓣
 			var info,infoObj,filter;
-			filter = new RegExp('[\[\]\|\`\(\)]','g');
+			//filter = new RegExp('[\[\]\|\`\(\)]','g');
 			info = '{'+document.getElementById("info").innerText.replace(new RegExp('\n','gm'),',').replace(new RegExp(',','g'),'","').replace(new RegExp(':','g'),'":"').replace(new RegExp('^'),'"').replace(new RegExp(',"$'),'')+'}';
-			infoObj = eval("("+info.replace(filter,'')+")");
+			infoObj = eval("("+info+")");
 			infoObj.title = document.getElementsByTagName("H1")[0].innerText;
 			//提示框样式1,如需使用注释样式2
 			prompt("基本信息",infoObj.title+","+infoObj.作者+","+infoObj.出版社+","+infoObj.ISBN+","+"￥"+infoObj.定价);
